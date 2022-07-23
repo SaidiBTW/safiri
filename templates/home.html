@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Home
+{% endblock title %}
+
+
+{% block content %}
+    <br>
+    <div class="jumbotron">
+        <h1 class="display-4">Safiri</h1>
+        <p class="lead">Travel with us with prices starting from Ksh.800</p>
+        <p class="lead">
+            <a href="{% url 'route_list' %}" class="btn btn-primary btn-lg">
+                View Routes
+            </a>
+        </p>
+    </div>
+{% endblock content %}
+    

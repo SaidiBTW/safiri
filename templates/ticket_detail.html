@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Your Ticket
+{% endblock title %}
+
+
+{% block content %}
+    <br>
+    <div class="jumbotron">
+        <h1 class="display-4">Ticket for {{ticket.owner}}</h1>
+        <p class="lead">{{ticket.seat.bus.route.start_point}}->{{ticket.seat.bus.route.end_point}}</p>
+        <p class="lead">Departure :{{ticket.seat.bus.departure}}</p>
+        <p class="lead">Price:{{ticket.seat.bus.price}}/-</p>
+        <p class="lead">Bus: {{ticket.seat.bus.number_plate}}</p>
+        <p class="lead">Seat Number: {{ticket.seat.seat_number}}</p>
+
+        <a href="{% url 'home' %}" class="btn btn-warning">Back to home</a>
+    </div>
+{% endblock content %}
+    

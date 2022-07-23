@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    Routes
+{% endblock title %}
+
+
+{% block content %}
+
+    <div class="container">
+    {% for route in routes %}
+        <div class="card">
+            <span class="text-muted">{{route.start_point}} -> {{route.end_point}}</span>
+        </div>
+        <div class="card-body">
+            
+            {% for bus in route.buses.all %}
+                <p>
+                    <span class="font-weight-bold">
+                        {{bus.number_plate}}
+                    </span>
+                    <span class="text-muted ml-2">
+                        &middot;{{bus.departure}}
+                    </span>
+                    <a href="{% url 'seat_select' bus.pk %}" class="btn btn-primary float-right">Travel</a>
+                </p>
+            {% endfor %}
+                
+        </div>
+    {% endfor %}
+</div>
+
+        
+{% endblock content %}
+    
